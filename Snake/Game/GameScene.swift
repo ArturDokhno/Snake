@@ -2,8 +2,7 @@
 //  GameScene.swift
 //  Snake
 //
-//  Created by Evgeny Kireev on 02/02/2019.
-//  Copyright © 2019 Pinspb. All rights reserved.
+//  Created by Артур Дохно on 15/12/2021.
 //
 
 import SpriteKit
