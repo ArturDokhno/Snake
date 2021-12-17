@@ -24,7 +24,12 @@ final class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let scene = GameScene(size: view.bounds.size)
-        scene.gameDelegate = self
+//        scene.gameDelegate = self
+        scene.onGameEnd = { [weak self] result in
+            self?.delegate?.didEndGame(withResult: result)
+            self?.dismiss(animated: true)
+        }
+//        scene.onGameEnd = didCallGameEnd
         scene.scaleMode = .resizeFill
         guard let skView = view as? SKView else { return }
         skView.showsFPS = true //включаем отображение fps (количество кадров в секунду)
@@ -32,6 +37,11 @@ final class GameViewController: UIViewController {
         skView.ignoresSiblingOrder = true //включаем произволный порядок рендеринга объектов в узле
         skView.presentScene(scene)
     }
+    // реализация функционала замыкания через функцию
+//    private func didCallGameEnd(result: Int) {
+//        self.delegate?.didEndGame(withResult: result)
+//        self.dismiss(animated: true)
+//    }
     
     // MARK: - UIViewController
     
@@ -48,11 +58,11 @@ final class GameViewController: UIViewController {
     }
 }
 
-extension GameViewController: GameSceneDelegate {
-    
-    func didEndGame(withResult result: Int) {
-        delegate?.didEndGame(withResult: result)
-        dismiss(animated: true)
-    }
-    
-}
+//extension GameViewController: GameSceneDelegate {
+//
+//    func didEndGame(withResult result: Int) {
+//        delegate?.didEndGame(withResult: result)
+//        dismiss(animated: true)
+//    }
+//
+//}

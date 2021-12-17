@@ -20,7 +20,9 @@ final class GameScene: SKScene {
     /// Яблоко в игре.
     var apple: Apple?
     
-    weak var gameDelegate: GameSceneDelegate?
+//    weak var gameDelegate: GameSceneDelegate?
+    
+    var onGameEnd: ((Int) -> Void)?
     
     // MARK: - SKScene
     
@@ -179,7 +181,10 @@ extension GameScene: SKPhysicsContactDelegate {
     
     private func headDidCollideWall(_ contact: SKPhysicsContact) {
         guard let snake = self.snake else { return }
-        gameDelegate?.didEndGame(withResult: snake.body.count - 1)
+        
+//        gameDelegate?.didEndGame(withResult: snake.body.count - 1)
+        
+        onGameEnd?(snake.body.count - 1)
     }
     
 }
