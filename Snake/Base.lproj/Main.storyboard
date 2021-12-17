@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -47,19 +48,28 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Последний результат: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgX-8w-RPJ">
-                                <rect key="frame" x="100" y="513.5" width="192" height="21"/>
+                                <rect key="frame" x="111" y="513.5" width="192" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rb0-fB-070">
+                                <rect key="frame" x="165.5" y="614.5" width="83.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Рекорды"/>
+                                <connections>
+                                    <segue destination="roq-ML-Q0Z" kind="show" identifier="recordSegue" id="ccU-3l-WUd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="tgX-8w-RPJ" secondAttribute="trailing" id="4uM-ha-bEN"/>
+                            <constraint firstItem="tgX-8w-RPJ" firstAttribute="centerX" secondItem="D6T-Ib-65x" secondAttribute="centerX" id="0oW-mO-bLz"/>
+                            <constraint firstItem="rb0-fB-070" firstAttribute="top" secondItem="tgX-8w-RPJ" secondAttribute="bottom" constant="80" id="6AL-t5-JPH"/>
                             <constraint firstItem="I3p-aw-l5H" firstAttribute="centerX" secondItem="D6T-Ib-65x" secondAttribute="centerX" id="IBM-b1-8Am"/>
-                            <constraint firstItem="tgX-8w-RPJ" firstAttribute="leading" secondItem="D6T-Ib-65x" secondAttribute="leadingMargin" constant="80" id="Nen-45-RzN"/>
                             <constraint firstItem="I3p-aw-l5H" firstAttribute="centerY" secondItem="D6T-Ib-65x" secondAttribute="centerY" id="nrq-wO-WpV"/>
                             <constraint firstItem="tgX-8w-RPJ" firstAttribute="top" secondItem="I3p-aw-l5H" secondAttribute="bottom" constant="50" id="o7Z-cg-J9Z"/>
+                            <constraint firstItem="rb0-fB-070" firstAttribute="centerX" secondItem="D6T-Ib-65x" secondAttribute="centerX" id="yQS-Gs-RFi"/>
                         </constraints>
                     </view>
                     <connections>
@@ -71,5 +81,57 @@
             </objects>
             <point key="canvasLocation" x="-804" y="78"/>
         </scene>
+        <!--Record View Controller-->
+        <scene sceneID="mPI-MK-A7m">
+            <objects>
+                <viewController id="roq-ML-Q0Z" customClass="RecordViewController" customModule="Snake" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JnV-9y-0Vb"/>
+                        <viewControllerLayoutGuide type="bottom" id="dD7-57-fKm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7UB-ic-hYf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8Nb-ZF-qlY">
+                                <rect key="frame" x="0.0" y="8" width="414" height="792"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecordCell" id="by0-gQ-sJC">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="by0-gQ-sJC" id="DXp-Ik-CQq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="roq-ML-Q0Z" id="zu7-P4-cxu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8Nb-ZF-qlY" firstAttribute="leading" secondItem="7UB-ic-hYf" secondAttribute="leading" id="1Dh-ux-WfL"/>
+                            <constraint firstItem="dD7-57-fKm" firstAttribute="top" secondItem="8Nb-ZF-qlY" secondAttribute="bottom" constant="8" symbolic="YES" id="h2v-TG-Jof"/>
+                            <constraint firstAttribute="trailing" secondItem="8Nb-ZF-qlY" secondAttribute="trailing" id="mzq-fm-si5"/>
+                            <constraint firstItem="8Nb-ZF-qlY" firstAttribute="top" secondItem="JnV-9y-0Vb" secondAttribute="bottom" constant="8" symbolic="YES" id="scu-oc-uPm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fNW-js-FBE"/>
+                    <connections>
+                        <outlet property="tableView" destination="8Nb-ZF-qlY" id="cz2-Uq-Lv7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TYk-jP-lms" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="787.5"/>
+        </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

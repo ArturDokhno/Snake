@@ -18,6 +18,8 @@ final class MainViewController: UIViewController {
         case "startGameSegue":
             guard let destination = segue.destination as? GameViewController else { return }
             destination.delegate = self
+        case "recordSegue":
+            guard let destination = segue.destination as? RecordViewController else { return }
         default:
             break
         }

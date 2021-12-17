@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7512F4D8276CEF070099E6A6 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7512F4D7276CEF070099E6A6 /* Record.swift */; };
+		7512F4DA276CEF430099E6A6 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7512F4D9276CEF430099E6A6 /* Game.swift */; };
+		7512F4DC276CF23A0099E6A6 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7512F4DB276CF23A0099E6A6 /* RecordViewController.swift */; };
 		755AE835276CDD8C00464119 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755AE834276CDD8C00464119 /* MainViewController.swift */; };
 		DC186A6B1F2DCFDE000473A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC186A6A1F2DCFDE000473A1 /* AppDelegate.swift */; };
 		DC186A711F2DCFDE000473A1 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC186A701F2DCFDE000473A1 /* GameScene.swift */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7512F4D7276CEF070099E6A6 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		7512F4D9276CEF430099E6A6 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		7512F4DB276CF23A0099E6A6 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		755AE834276CDD8C00464119 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DC186A671F2DCFDE000473A1 /* Snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC186A6A1F2DCFDE000473A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,7 +108,10 @@
 			isa = PBXGroup;
 			children = (
 				DC186A701F2DCFDE000473A1 /* GameScene.swift */,
+				7512F4D7276CEF070099E6A6 /* Record.swift */,
+				7512F4D9276CEF430099E6A6 /* Game.swift */,
 				DC186A721F2DCFDE000473A1 /* GameViewController.swift */,
+				7512F4DB276CF23A0099E6A6 /* RecordViewController.swift */,
 				F8CF8AF52205E5FB00EC674D /* CollisionCategories.swift */,
 				755AE834276CDD8C00464119 /* MainViewController.swift */,
 			);
@@ -183,9 +192,12 @@
 			files = (
 				DC186A871F2E08CF000473A1 /* SnakeHead.swift in Sources */,
 				DC186A831F2E042F000473A1 /* Apple.swift in Sources */,
+				7512F4D8276CEF070099E6A6 /* Record.swift in Sources */,
+				7512F4DC276CF23A0099E6A6 /* RecordViewController.swift in Sources */,
 				DC186A711F2DCFDE000473A1 /* GameScene.swift in Sources */,
 				DC186A731F2DCFDE000473A1 /* GameViewController.swift in Sources */,
 				DC186A851F2E07AB000473A1 /* SnakeBodyPart.swift in Sources */,
+				7512F4DA276CEF430099E6A6 /* Game.swift in Sources */,
 				DCCE4FCF1F2E0B1A00544F77 /* Snake.swift in Sources */,
 				755AE835276CDD8C00464119 /* MainViewController.swift in Sources */,
 				F8CF8AF62205E5FB00EC674D /* CollisionCategories.swift in Sources */,

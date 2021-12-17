@@ -181,10 +181,11 @@ extension GameScene: SKPhysicsContactDelegate {
     
     private func headDidCollideWall(_ contact: SKPhysicsContact) {
         guard let snake = self.snake else { return }
-        
 //        gameDelegate?.didEndGame(withResult: snake.body.count - 1)
-        
-        onGameEnd?(snake.body.count - 1)
+        let scope = snake.body.count - 1
+        let record = Record(date: Date(), score: scope)
+        Game.shared.addREcord(record)
+        onGameEnd?(scope)
     }
     
 }
