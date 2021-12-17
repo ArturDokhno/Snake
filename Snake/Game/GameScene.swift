@@ -8,6 +8,10 @@
 import SpriteKit
 import GameplayKit
 
+protocol GameSceneDelegate: AnyObject {
+    func didEndGame(withResult result: Int)
+}
+
 final class GameScene: SKScene {
     
     /// Наша змея
@@ -15,6 +19,8 @@ final class GameScene: SKScene {
     
     /// Яблоко в игре.
     var apple: Apple?
+    
+    weak var gameDelegate: GameSceneDelegate?
     
     // MARK: - SKScene
     
@@ -172,6 +178,8 @@ extension GameScene: SKPhysicsContactDelegate {
     }
     
     private func headDidCollideWall(_ contact: SKPhysicsContact) {
-        self.restartGame()
+        guard let snake = self.snake else { return }
+        gameDelegate?.didEndGame(withResult: snake.body.count - 1)
     }
+    
 }

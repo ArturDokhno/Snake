@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		755AE835276CDD8C00464119 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755AE834276CDD8C00464119 /* MainViewController.swift */; };
 		DC186A6B1F2DCFDE000473A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC186A6A1F2DCFDE000473A1 /* AppDelegate.swift */; };
 		DC186A711F2DCFDE000473A1 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC186A701F2DCFDE000473A1 /* GameScene.swift */; };
 		DC186A731F2DCFDE000473A1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC186A721F2DCFDE000473A1 /* GameViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		755AE834276CDD8C00464119 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DC186A671F2DCFDE000473A1 /* Snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC186A6A1F2DCFDE000473A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC186A701F2DCFDE000473A1 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				DC186A701F2DCFDE000473A1 /* GameScene.swift */,
 				DC186A721F2DCFDE000473A1 /* GameViewController.swift */,
 				F8CF8AF52205E5FB00EC674D /* CollisionCategories.swift */,
+				755AE834276CDD8C00464119 /* MainViewController.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				DC186A731F2DCFDE000473A1 /* GameViewController.swift in Sources */,
 				DC186A851F2E07AB000473A1 /* SnakeBodyPart.swift in Sources */,
 				DCCE4FCF1F2E0B1A00544F77 /* Snake.swift in Sources */,
+				755AE835276CDD8C00464119 /* MainViewController.swift in Sources */,
 				F8CF8AF62205E5FB00EC674D /* CollisionCategories.swift in Sources */,
 				DC186A6B1F2DCFDE000473A1 /* AppDelegate.swift in Sources */,
 			);
