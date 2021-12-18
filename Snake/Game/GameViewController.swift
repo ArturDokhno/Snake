@@ -20,35 +20,11 @@ final class GameViewController: UIViewController {
     weak var delegate: GameViewControllerDelegate?
     var difficulty: Difficulty = .medium
     
-    private var createAppleStrategy: CreateApplesStrategy {
-        switch self.difficulty {
-        case .easy:
-            return SequentialCreateOneAppleStrategy()
-        case .medium, .hard, .insane:
-            return RandomCreateOneAppleStrategy()
-        }
-    }
-    
-    private var snakeSpeedStrategy: SnakeSpeedStrategy {
-        switch self.difficulty {
-        case .easy, .medium:
-            return NotIncreaseSnakeSpeedStrategy()
-        case .hard:
-            let strategy = ArithmeticProgressionSnakeSpeedStrategy()
-            strategy.maxSpeed = 350.0
-            return strategy
-        case .insane:
-            return GeometricProgressionSnakeSpeedStrategy()
-        }
-    }
-    
     // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let scene = GameScene(size: view.bounds.size,
-                              createApplesStrategy: createAppleStrategy,
-                              snakeSpeedStrategy: snakeSpeedStrategy)
+        let scene = GameScene(size: view.bounds.size, difficulty: difficulty)
 //        scene.gameDelegate = self
         scene.onGameEnd = { [weak self] result in
             self?.delegate?.didEndGame(withResult: result)
