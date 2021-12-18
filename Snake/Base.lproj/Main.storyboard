@@ -19,13 +19,32 @@
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Скорость змеи:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWm-WV-oCM">
+                                <rect key="frame" x="20" y="52" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BTp-Rd-g3Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CWm-WV-oCM" firstAttribute="trailing" secondItem="3se-qz-xqx" secondAttribute="trailingMargin" id="7q4-mg-kGk"/>
+                            <constraint firstItem="CWm-WV-oCM" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" id="iif-Qq-2ln"/>
+                            <constraint firstItem="CWm-WV-oCM" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" constant="8" symbolic="YES" id="r4S-T7-eEe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Tvu-nn-p1A"/>
+                    <connections>
+                        <outlet property="speedLabel" destination="CWm-WV-oCM" id="LAU-mY-MPV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="79"/>
+            <point key="canvasLocation" x="34.782608695652179" y="78.348214285714278"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="NTR-gY-OoQ">

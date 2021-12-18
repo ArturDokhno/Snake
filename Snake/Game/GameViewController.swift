@@ -15,10 +15,15 @@ protocol GameViewControllerDelegate: AnyObject {
 
 final class GameViewController: UIViewController {
     
+    //MARK: - View
+    
+    @IBOutlet var speedLabel: UILabel!
+    
     //MARK: - Properties
     
     weak var delegate: GameViewControllerDelegate?
     var difficulty: Difficulty = .medium
+
     
     // MARK: - Life cycle
     
@@ -37,6 +42,11 @@ final class GameViewController: UIViewController {
         skView.showsNodeCount = true //показывать количество объектов на экране
         skView.ignoresSiblingOrder = true //включаем произволный порядок рендеринга объектов в узле
         skView.presentScene(scene)
+        scene.snake?.moveSpeed.addObserver(self,
+                                           options: [.new, .initial],
+                                           closure: { [weak self] (moveSpeed, _) in
+            self?.speedLabel.text = "Скорость змеи: \(moveSpeed)"
+        })
     }
     
     // реализация функционала замыкания через функцию

@@ -16,6 +16,8 @@
 		7594A24D276E1DE00033F4F8 /* CreateApplesStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7594A24C276E1DE00033F4F8 /* CreateApplesStrategy.swift */; };
 		759E2112276E352A00EE2D8D /* SnakeSpeedStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759E2111276E352A00EE2D8D /* SnakeSpeedStrategy.swift */; };
 		759E2115276E47B400EE2D8D /* DifficultySettingsFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759E2114276E47B400EE2D8D /* DifficultySettingsFacade.swift */; };
+		759E2118276E55B200EE2D8D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759E2117276E55B200EE2D8D /* Observable.swift */; };
+		759E211A276E577A00EE2D8D /* ObservableOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759E2119276E577A00EE2D8D /* ObservableOptions.swift */; };
 		DC186A6B1F2DCFDE000473A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC186A6A1F2DCFDE000473A1 /* AppDelegate.swift */; };
 		DC186A711F2DCFDE000473A1 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC186A701F2DCFDE000473A1 /* GameScene.swift */; };
 		DC186A731F2DCFDE000473A1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC186A721F2DCFDE000473A1 /* GameViewController.swift */; };
@@ -39,6 +41,8 @@
 		7594A24C276E1DE00033F4F8 /* CreateApplesStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateApplesStrategy.swift; sourceTree = "<group>"; };
 		759E2111276E352A00EE2D8D /* SnakeSpeedStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeSpeedStrategy.swift; sourceTree = "<group>"; };
 		759E2114276E47B400EE2D8D /* DifficultySettingsFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultySettingsFacade.swift; sourceTree = "<group>"; };
+		759E2117276E55B200EE2D8D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		759E2119276E577A00EE2D8D /* ObservableOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableOptions.swift; sourceTree = "<group>"; };
 		DC186A671F2DCFDE000473A1 /* Snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC186A6A1F2DCFDE000473A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC186A701F2DCFDE000473A1 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -80,6 +84,15 @@
 				759E2114276E47B400EE2D8D /* DifficultySettingsFacade.swift */,
 			);
 			path = Facade;
+			sourceTree = "<group>";
+		};
+		759E2116276E558E00EE2D8D /* Observer */ = {
+			isa = PBXGroup;
+			children = (
+				759E2117276E55B200EE2D8D /* Observable.swift */,
+				759E2119276E577A00EE2D8D /* ObservableOptions.swift */,
+			);
+			path = Observer;
 			sourceTree = "<group>";
 		};
 		DC186A5E1F2DCFDE000473A1 = {
@@ -134,6 +147,7 @@
 		F8CF8AF42205E5DA00EC674D /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				759E2116276E558E00EE2D8D /* Observer */,
 				759E2113276E47A200EE2D8D /* Facade */,
 				7594A24B276E1DB20033F4F8 /* Strategy */,
 				DC186A701F2DCFDE000473A1 /* GameScene.swift */,
@@ -225,6 +239,8 @@
 				759E2115276E47B400EE2D8D /* DifficultySettingsFacade.swift in Sources */,
 				DC186A871F2E08CF000473A1 /* SnakeHead.swift in Sources */,
 				7594A24A276E1AC50033F4F8 /* Difficulty.swift in Sources */,
+				759E211A276E577A00EE2D8D /* ObservableOptions.swift in Sources */,
+				759E2118276E55B200EE2D8D /* Observable.swift in Sources */,
 				DC186A831F2E042F000473A1 /* Apple.swift in Sources */,
 				7512F4D8276CEF070099E6A6 /* Record.swift in Sources */,
 				7512F4DC276CF23A0099E6A6 /* RecordViewController.swift in Sources */,
