@@ -18,12 +18,24 @@ final class GameViewController: UIViewController {
     //MARK: - Properties
     
     weak var delegate: GameViewControllerDelegate?
+    var difficulty: Difficulty = .medium
+    
+    private var createAppleStrategy: CreateApplesStrategy {
+        switch self.difficulty {
+        case .easy:
+            return SequentialCreateOneAppleStrategy()
+        case .medium, .hard, .insane:
+            return RandomCreateOneAppleStrategy()
+        }
+    }
+    
     
     // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let scene = GameScene(size: view.bounds.size)
+        let scene = GameScene(size: view.bounds.size,
+                              createApplesStrategy: createAppleStrategy)
 //        scene.gameDelegate = self
         scene.onGameEnd = { [weak self] result in
             self?.delegate?.didEndGame(withResult: result)
@@ -37,6 +49,7 @@ final class GameViewController: UIViewController {
         skView.ignoresSiblingOrder = true //включаем произволный порядок рендеринга объектов в узле
         skView.presentScene(scene)
     }
+    
     // реализация функционала замыкания через функцию
 //    private func didCallGameEnd(result: Int) {
 //        self.delegate?.didEndGame(withResult: result)

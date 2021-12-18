@@ -54,32 +54,46 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rb0-fB-070">
-                                <rect key="frame" x="165.5" y="614.5" width="83.5" height="31"/>
+                                <rect key="frame" x="165.5" y="559.5" width="83.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Рекорды"/>
                                 <connections>
                                     <segue destination="roq-ML-Q0Z" kind="show" identifier="recordSegue" id="ccU-3l-WUd"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hDT-S7-5bN">
+                                <rect key="frame" x="20" y="44" width="374" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="Легкий"/>
+                                    <segment title="Средний"/>
+                                    <segment title="Тяжелый"/>
+                                    <segment title="Безумный"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tgX-8w-RPJ" firstAttribute="centerX" secondItem="D6T-Ib-65x" secondAttribute="centerX" id="0oW-mO-bLz"/>
-                            <constraint firstItem="rb0-fB-070" firstAttribute="top" secondItem="tgX-8w-RPJ" secondAttribute="bottom" constant="80" id="6AL-t5-JPH"/>
+                            <constraint firstItem="rb0-fB-070" firstAttribute="top" secondItem="tgX-8w-RPJ" secondAttribute="bottom" constant="25" id="6AL-t5-JPH"/>
+                            <constraint firstItem="hDT-S7-5bN" firstAttribute="trailing" secondItem="D6T-Ib-65x" secondAttribute="trailingMargin" id="DOr-ux-8fe"/>
+                            <constraint firstItem="hDT-S7-5bN" firstAttribute="top" secondItem="kRw-Hy-0U4" secondAttribute="bottom" id="EgG-2f-rcj"/>
                             <constraint firstItem="I3p-aw-l5H" firstAttribute="centerX" secondItem="D6T-Ib-65x" secondAttribute="centerX" id="IBM-b1-8Am"/>
+                            <constraint firstItem="hDT-S7-5bN" firstAttribute="leading" secondItem="D6T-Ib-65x" secondAttribute="leadingMargin" id="c5A-3O-7ev"/>
                             <constraint firstItem="I3p-aw-l5H" firstAttribute="centerY" secondItem="D6T-Ib-65x" secondAttribute="centerY" id="nrq-wO-WpV"/>
                             <constraint firstItem="tgX-8w-RPJ" firstAttribute="top" secondItem="I3p-aw-l5H" secondAttribute="bottom" constant="50" id="o7Z-cg-J9Z"/>
                             <constraint firstItem="rb0-fB-070" firstAttribute="centerX" secondItem="D6T-Ib-65x" secondAttribute="centerX" id="yQS-Gs-RFi"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="difficultyControl" destination="hDT-S7-5bN" id="siY-VC-38e"/>
                         <outlet property="lastResultLabel" destination="tgX-8w-RPJ" id="Li5-xz-GYF"/>
                         <outlet property="startGameButton" destination="I3p-aw-l5H" id="Yql-9W-8Cd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pci-GL-FHd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-804" y="78"/>
+            <point key="canvasLocation" x="-804.34782608695662" y="77.678571428571431"/>
         </scene>
         <!--Record View Controller-->
         <scene sceneID="mPI-MK-A7m">

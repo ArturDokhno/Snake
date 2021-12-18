@@ -12,14 +12,31 @@ final class MainViewController: UIViewController {
     
     @IBOutlet var lastResultLabel: UILabel!
     @IBOutlet var startGameButton: UIButton!
-   
+    @IBOutlet var difficultyControl: UISegmentedControl!
+    
+    private var selectedDifficulty: Difficulty {
+        switch difficultyControl.selectedSegmentIndex {
+        case 0:
+            return .easy
+        case 1:
+            return .medium
+        case 2:
+            return .hard
+        case 3:
+            return .insane
+        default:
+            return .medium
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "startGameSegue":
             guard let destination = segue.destination as? GameViewController else { return }
+            destination.difficulty = selectedDifficulty
             destination.delegate = self
         case "recordSegue":
-            guard let destination = segue.destination as? RecordViewController else { return }
+            guard segue.destination is RecordViewController else { return }
         default:
             break
         }

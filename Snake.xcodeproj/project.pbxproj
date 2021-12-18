@@ -12,6 +12,8 @@
 		7512F4DC276CF23A0099E6A6 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7512F4DB276CF23A0099E6A6 /* RecordViewController.swift */; };
 		7512F4DE276CF6D80099E6A6 /* RecordsCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7512F4DD276CF6D80099E6A6 /* RecordsCaretaker.swift */; };
 		755AE835276CDD8C00464119 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755AE834276CDD8C00464119 /* MainViewController.swift */; };
+		7594A24A276E1AC50033F4F8 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7594A249276E1AC50033F4F8 /* Difficulty.swift */; };
+		7594A24D276E1DE00033F4F8 /* CreateApplesStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7594A24C276E1DE00033F4F8 /* CreateApplesStrategy.swift */; };
 		DC186A6B1F2DCFDE000473A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC186A6A1F2DCFDE000473A1 /* AppDelegate.swift */; };
 		DC186A711F2DCFDE000473A1 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC186A701F2DCFDE000473A1 /* GameScene.swift */; };
 		DC186A731F2DCFDE000473A1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC186A721F2DCFDE000473A1 /* GameViewController.swift */; };
@@ -31,6 +33,8 @@
 		7512F4DB276CF23A0099E6A6 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		7512F4DD276CF6D80099E6A6 /* RecordsCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsCaretaker.swift; sourceTree = "<group>"; };
 		755AE834276CDD8C00464119 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7594A249276E1AC50033F4F8 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		7594A24C276E1DE00033F4F8 /* CreateApplesStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateApplesStrategy.swift; sourceTree = "<group>"; };
 		DC186A671F2DCFDE000473A1 /* Snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC186A6A1F2DCFDE000473A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC186A701F2DCFDE000473A1 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -57,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7594A24B276E1DB20033F4F8 /* Strategy */ = {
+			isa = PBXGroup;
+			children = (
+				7594A24C276E1DE00033F4F8 /* CreateApplesStrategy.swift */,
+			);
+			path = Strategy;
+			sourceTree = "<group>";
+		};
 		DC186A5E1F2DCFDE000473A1 = {
 			isa = PBXGroup;
 			children = (
@@ -109,7 +121,9 @@
 		F8CF8AF42205E5DA00EC674D /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				7594A24B276E1DB20033F4F8 /* Strategy */,
 				DC186A701F2DCFDE000473A1 /* GameScene.swift */,
+				7594A249276E1AC50033F4F8 /* Difficulty.swift */,
 				7512F4D7276CEF070099E6A6 /* Record.swift */,
 				7512F4D9276CEF430099E6A6 /* Game.swift */,
 				7512F4DD276CF6D80099E6A6 /* RecordsCaretaker.swift */,
@@ -195,6 +209,7 @@
 			files = (
 				7512F4DE276CF6D80099E6A6 /* RecordsCaretaker.swift in Sources */,
 				DC186A871F2E08CF000473A1 /* SnakeHead.swift in Sources */,
+				7594A24A276E1AC50033F4F8 /* Difficulty.swift in Sources */,
 				DC186A831F2E042F000473A1 /* Apple.swift in Sources */,
 				7512F4D8276CEF070099E6A6 /* Record.swift in Sources */,
 				7512F4DC276CF23A0099E6A6 /* RecordViewController.swift in Sources */,
@@ -205,6 +220,7 @@
 				DCCE4FCF1F2E0B1A00544F77 /* Snake.swift in Sources */,
 				755AE835276CDD8C00464119 /* MainViewController.swift in Sources */,
 				F8CF8AF62205E5FB00EC674D /* CollisionCategories.swift in Sources */,
+				7594A24D276E1DE00033F4F8 /* CreateApplesStrategy.swift in Sources */,
 				DC186A6B1F2DCFDE000473A1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,6 +24,19 @@ final class GameScene: SKScene {
     
     var onGameEnd: ((Int) -> Void)?
     
+    private let createApplesStrategy: CreateApplesStrategy
+    
+    // MARK: - Initialization
+    
+    init(size: CGSize, createApplesStrategy: CreateApplesStrategy) {
+        self.createApplesStrategy = createApplesStrategy
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - SKScene
     
     override func didMove(to view: SKView) {
@@ -130,9 +143,8 @@ final class GameScene: SKScene {
     
     fileprivate func createApple(){
         guard let view = self.view, let scene = view.scene else { return }
-        let randX  = CGFloat(arc4random_uniform(UInt32(scene.frame.maxX - 5)) + 1)
-        let randY  = CGFloat(arc4random_uniform(UInt32(scene.frame.maxY - 5)) + 1)
-        let apple = Apple(position: CGPoint(x: randX, y: randY))
+        let apples = createApplesStrategy.createApples(in: scene.frame)
+        guard let apple = apples.first else { return }
         self.apple = apple
         self.addChild(apple)
     }
