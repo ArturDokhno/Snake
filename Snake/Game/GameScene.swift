@@ -25,11 +25,15 @@ final class GameScene: SKScene {
     var onGameEnd: ((Int) -> Void)?
     
     private let createApplesStrategy: CreateApplesStrategy
+    private let snakeSpeedStrategy: SnakeSpeedStrategy
     
     // MARK: - Initialization
     
-    init(size: CGSize, createApplesStrategy: CreateApplesStrategy) {
+    init(size: CGSize,
+         createApplesStrategy: CreateApplesStrategy,
+         snakeSpeedStrategy: SnakeSpeedStrategy ) {
         self.createApplesStrategy = createApplesStrategy
+        self.snakeSpeedStrategy = snakeSpeedStrategy
         super.init(size: size)
     }
     
@@ -138,6 +142,7 @@ final class GameScene: SKScene {
         //создаем змею по центру экрана и добавляем ее на сцену
         let snake = Snake(atPoint: CGPoint(x: scene.frame.midX, y: scene.frame.midY))
         self.snake = snake
+        snakeSpeedStrategy.snake = snake
         self.addChild(snake)
     }
     
@@ -189,6 +194,7 @@ extension GameScene: SKPhysicsContactDelegate {
         self.apple = nil
         //создаем новое яблоко
         createApple()
+        self.snakeSpeedStrategy.increaseSpeedByEatingApple()
     }
     
     private func headDidCollideWall(_ contact: SKPhysicsContact) {

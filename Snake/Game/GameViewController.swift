@@ -29,13 +29,26 @@ final class GameViewController: UIViewController {
         }
     }
     
+    private var snakeSpeedStrategy: SnakeSpeedStrategy {
+        switch self.difficulty {
+        case .easy, .medium:
+            return NotIncreaseSnakeSpeedStrategy()
+        case .hard:
+            let strategy = ArithmeticProgressionSnakeSpeedStrategy()
+            strategy.maxSpeed = 350.0
+            return strategy
+        case .insane:
+            return GeometricProgressionSnakeSpeedStrategy()
+        }
+    }
     
     // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let scene = GameScene(size: view.bounds.size,
-                              createApplesStrategy: createAppleStrategy)
+                              createApplesStrategy: createAppleStrategy,
+                              snakeSpeedStrategy: snakeSpeedStrategy)
 //        scene.gameDelegate = self
         scene.onGameEnd = { [weak self] result in
             self?.delegate?.didEndGame(withResult: result)
